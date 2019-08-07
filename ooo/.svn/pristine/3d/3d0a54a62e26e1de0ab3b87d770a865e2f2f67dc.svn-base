@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/reset.css">
+    <title>综合管理</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            /* overflow: hidden; */
+        }
+
+        .content {
+            padding: 20px 0px 0 50px;
+        }
+
+        .stitle {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .manner {
+            border: 0px solid red;
+            border-color: #088ef0;
+            background: linear-gradient(#34a5f8, #088ef0);
+            color: #FFF;
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            text-align: center;
+            width: 70px;
+            height: 40px;
+            box-sizing: border-box;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+        }
+
+        input {
+            outline-color: invert;
+            outline-style: none;
+            outline-width: 0px;
+            border: none;
+            border-style: none;
+            text-shadow: none;
+            -webkit-appearance: none;
+            -webkit-user-select: text;
+            outline-color: transparent;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background: rgb(64, 158, 255);
+            padding: 10px 20px;
+            border: solid 1px #666;
+            color: #fff;
+            text-align: center;
+        }
+
+        td {
+            padding: 10px 20px;
+            border: solid 1px #666;
+            text-align: center;
+        }
+
+        .submit {
+            width: 70px;
+            height: 30px;
+            border: 0px solid red;
+            border-color: #088ef0;
+            background: linear-gradient(#34a5f8, #088ef0);
+            color: #FFF;
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            box-sizing: border-box;
+            margin-top: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="content" style="margin-bottom:50px;">
+    <h1>岗位设置</h1>
+    <p class="stitle">简要描述</p>
+    <li>菜单列表&搜索接口</li>
+    <p class="stitle">请求url</p>
+    <li>
+        <code style="color:red;font-size: 20px;"> http://ydy.test.com/p/menu/lists</code>
+    </li>
+    <p class="stitle">请求方式</p>
+    <button class="manner">POST</button>
+    <p class="stitle">参数</p>
+    <form id="from" method="POST" action="">
+        <table>
+            <tr>
+                <th>参数</th>
+                <th>参数值</th>
+                <th>必选</th>
+                <th>类型</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>page</td>
+                <td><input type="text" name="name" value="page" id="name" placeholder="请输入" /></td>
+                <td><input type="text" name="name" value="否" id="name" placeholder="是" /></td>
+                <td><input type="text" name="name" value="整型" id="name" placeholder="number" /></td>
+                <td>页码（不传参数默认第一页）</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><input type="text" name="name" value="name" id="name" placeholder="请输入" /></td>
+                <td><input type="text" name="name" value="否" id="name" placeholder="是" /></td>
+                <td><input type="text" name="name" value="字符串" id="name" placeholder="number" /></td>
+                <td>名称</td>
+            </tr>
+        </table>
+
+        <p class="stitle">返回示例</p>
+        <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px">
+            {
+                "code": 1,
+                "message": "请求成功",
+                "data": [
+                    {
+                        "id": 15,
+                        "uuid": "1149B24C-BE17-B4C6-722E-372BB86F86A8",
+                        "puuid": "0",
+                        "name": "综合管理",
+                        "type": 1,
+                        "uri": "www.baicu.com",
+                        "order_no": 2
+                    },
+                    {
+                        "id": 27,
+                        "uuid": "3A16D586-0A14-A5D3-6837-86350A8E9820",
+                        "puuid": "1149B24C-BE17-B4C6-722E-372BB86F86A8",
+                        "name": "综合设置",
+                        "type": 2,
+                        "uri": "www.baicu.com",
+                        "order_no": 13
+                    }
+                ]
+            }
+        </textarea>
+
+        <p class="stitle">返回参数说明</p>
+        <table>
+            <tr>
+                <th>参数</th>
+                <th>类型</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td><input type="text" name="name" value="整型" id="name" placeholder="请输入" /></td>
+                <td>状态码</td>
+            </tr>
+            <tr>
+                <td>message</td>
+                <td><input type="text" name="name" value="字符串" id="name" placeholder="请输入" /></td>
+                <td>结果描述</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td><input type="text" name="name" value="数组" id="name" placeholder="请输入" /></td>
+                <td>
+                    <id></id>
+                    uuid、
+                    puuid(父级UUID)、
+                    type(1、模块   2、菜单   3、按钮)、
+                    uri、
+                    order_no(排序)
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+
+    <p class="stitle">简要描述</p>
+    <li>新建</li>
+    <p class="stitle">请求url</p>
+    <li>
+        <code style="color:red;font-size: 20px;"> http://ydy.test.com/p/menu/lists</code>
+    </li>
+    <p class="stitle">请求方式</p>
+    <button class="manner">POST</button>
+    <p class="stitle">参数</p>
+    <form id="from" method="POST" action="">
+        <table>
+            <tr>
+                <th>参数</th>
+                <th>参数值</th>
+                <th>必选</th>
+                <th>类型</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>page</td>
+                <td><input type="text" name="name" value="page" id="name" placeholder="请输入" /></td>
+                <td><input type="text" name="name" value="否" id="name" placeholder="是" /></td>
+                <td><input type="text" name="name" value="整型" id="name" placeholder="number" /></td>
+                <td>页码（不传参数默认第一页）</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><input type="text" name="name" value="name" id="name" placeholder="请输入" /></td>
+                <td><input type="text" name="name" value="否" id="name" placeholder="是" /></td>
+                <td><input type="text" name="name" value="字符串" id="name" placeholder="number" /></td>
+                <td>名称</td>
+            </tr>
+        </table>
+
+        <p class="stitle">返回示例</p>
+        <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px">
+            {
+                "code": 1,
+                "message": "请求成功",
+                "data": [
+                    {
+                        "id": 15,
+                        "uuid": "1149B24C-BE17-B4C6-722E-372BB86F86A8",
+                        "puuid": "0",
+                        "name": "综合管理",
+                        "type": 1,
+                        "uri": "www.baicu.com",
+                        "order_no": 2
+                    },
+                    {
+                        "id": 27,
+                        "uuid": "3A16D586-0A14-A5D3-6837-86350A8E9820",
+                        "puuid": "1149B24C-BE17-B4C6-722E-372BB86F86A8",
+                        "name": "综合设置",
+                        "type": 2,
+                        "uri": "www.baicu.com",
+                        "order_no": 13
+                    }
+                ]
+            }
+        </textarea>
+
+        <p class="stitle">返回参数说明</p>
+        <table>
+            <tr>
+                <th>参数</th>
+                <th>类型</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td><input type="text" name="name" value="整型" id="name" placeholder="请输入" /></td>
+                <td>状态码</td>
+            </tr>
+            <tr>
+                <td>message</td>
+                <td><input type="text" name="name" value="字符串" id="name" placeholder="请输入" /></td>
+                <td>结果描述</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td><input type="text" name="name" value="数组" id="name" placeholder="请输入" /></td>
+                <td>
+                    <id></id>
+                    uuid
+                    puuid(父级UUID)
+                    type(1、模块   2、菜单   3、按钮)
+                    uri
+                    order_no(排序)
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+</body>
+
+<script>
+    function submitFrom() {
+        document.getElementById("from").submit()
+        console.log(document.getElementById('from'))
+        console.log(111)
+
+    }
+
+    // 内链框架的自适应高度
+    //set iframe height
+    // 计算页面的实际高度，iframe自适应会用到
+    // window.onload=function(){
+    //     function calcPageHeight(doc) {
+    //         var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight,doc.body.offsetHeight)
+    //         var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight,doc.body.offsetHeight)
+    //         var height  = Math.max(cHeight, sHeight);
+    //         return height
+    //     }
+    //     //根据ID获取iframe对象
+    //     var ifr = document.getElementById('mainFrame')
+    //     ifr.onload = function() {
+    //     //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩
+    //           ifr.style.height='0px';
+    //         var iDoc = ifr.contentDocument || ifr.document
+    //         var height = calcPageHeight(iDoc)
+    //         console.log(height)
+    //         if(height < 850){
+    //             height = 850;
+    //         }
+    //         ifr.style.height = height + 'px'
+    //     }
+
+    // }
+</script>
+
+</html>

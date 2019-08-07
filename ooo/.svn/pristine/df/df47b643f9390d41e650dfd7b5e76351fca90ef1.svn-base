@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/reset.css">
+    <title>行踪管理</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 0ch;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">行踪管理</header>
+    <h1>行踪管理</h1>
+    <p>简要描述</p>
+    <li>用户登录接口</li>
+    <p>请求url</p>
+    <li>http://xx.com/api/user/login</li>
+    <p>请求方式</p>
+    <button>POST</button>
+    <h2>参数</h2>
+    <form id="from" method="POST" action="">
+        <table>
+            <tr>
+                <th>参数</th>
+                <th>参数值</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><input type="text" name="name" value="" id="name" /></td>
+            </tr>
+        </table>
+        <!-- <input type="submit" value="提交(提交按钮)"> -->
+        <input type="button" value="提交" onclick="submitFrom();">
+        <input type="reset" value="重置(重置按钮)">
+
+    </form>
+
+</body>
+
+<script>
+    function submitFrom() {
+        document.getElementById("from").submit()
+        console.log(document.getElementById('from'))
+    }
+</script>
+
+</html>

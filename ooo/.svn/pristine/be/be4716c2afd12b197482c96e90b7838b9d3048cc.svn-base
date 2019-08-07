@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <!--<script src="https://cdn.bootcss.com/jquery/3.4.1/core.js"></script>-->
+    <script src="./jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+
+    <div class="layui-layout layui-layout-admin">
+
+        <!--1.头部区域-->
+
+        <div class="layui-header">
+
+            <div class="layui-logo">后台管理</div>
+
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+
+            <ul class="layui-nav layui-layout-left">
+            </ul>
+
+            <ul class="layui-nav layui-layout-right">
+
+                <!--<li class="layui-nav-item">
+                <a href="javascript:;">
+                  <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                  贤心
+                </a>
+                <dl class="layui-nav-child">
+                  <dd><a href="">基本资料</a></dd>
+                  <dd><a href="">安全设置</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item"><a href="">退了</a></li>-->
+            </ul>
+        </div>
+
+        <!--2.左侧导航-->
+
+        <div class="layui-side layui-bg-black">
+
+            <div class="layui-side-scroll">
+
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                    <!-- 综合管理 -->
+                    <li class="layui-nav-item " mytitle="组织结构">
+                        <a href="javascript:;">综合管理</a>
+                        <dl class="layui-nav-child">
+                            <li><a href="javascript:;" data-url="synthesize.html" mytitle="组织结构" class="leftdaohang">组织结构</a>
+                            </li>
+                            <dd><a href="javascript:;" data-url="track.html" mytitle="行踪管理" class="leftdaohang">行踪管理</a></dd>
+                            <dd><a href="javascript:;" data-url="synthesize.html" mytitle="反兴奋剂管理" class="leftdaohang">反兴奋剂管理</a></dd>
+                            <dd>
+                                <a href="javascript:; " class="third-class">综合设置
+                                    <span class=" layui-icon layui-icon-next"></span>
+                                </a>
+                                <ol class="layui-nav-third-child layui-bg-blue ">
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="岗位设置" class="leftdaohang">岗位设置</a></li>
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="档案设置" class="leftdaohang">档案设置</a></li>
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="部门设置" class="leftdaohang">部门设置</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪设置 " class="leftdaohang ">行踪设置</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">行踪表单</a></li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <!-- 训练管理 -->
+                    <li class="layui-nav-item ">
+                        <a href="javascript:; ">训练管理</a>
+                        <dl class="layui-nav-child ">
+                            <dd><a href="javascript:;" data-url="jiaose.html" mytitle="岗位设置" class="leftdaohang">训练计划</a></dd>
+                            <dd><a href="javascript:;" data-url="jiaose.html" mytitle="训练分析" class="leftdaohang">训练分析</a></dd>
+                            <dd>
+                                <a href="javascript:; " class="third-class">训练设置
+                                    <span class=" layui-icon layui-icon-next"></span>
+                                </a>
+                                <ol class="layui-nav-third-child layui-bg-blue ">
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="岗位设置" class="leftdaohang">周计划模板</a></li>
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="档案设置" class="leftdaohang">周计划表单</a></li>
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="部门设置" class="leftdaohang">周期计划模板</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪设置 " class="leftdaohang ">周期计划表单</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">体能指标分类</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">体能测试指标</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">训练强度设置</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">单位设置</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">地址设置</a></li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <!-- 机能监控 -->
+                    <li class="layui-nav-item ">
+                        <a href="javascript:; ">机能监控</a>
+                        <dl class="layui-nav-child ">
+                            <dd><a href="javascript:;" data-url="jiaose.html" mytitle="岗位设置" class="leftdaohang">监控管理</a></dd>
+                            <dd><a href="javascript:;" data-url="jiaose.html" mytitle="岗位设置" class="leftdaohang">监控分析</a></dd>
+                            <dd><a href="javascript:; " class="third-class">训练设置<span class=" layui-icon layui-icon-next"></span></a>
+                                <ol class="layui-nav-third-child layui-bg-blue ">
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="岗位设置" class="leftdaohang">周计划模板</a></li>
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="档案设置" class="leftdaohang">周计划表单</a></li>
+                                    <li><a href="javascript:;" data-url="jiaose.html" mytitle="部门设置" class="leftdaohang">周期计划模板</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪设置 " class="leftdaohang ">周期计划表单</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">体能指标分类</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">体能测试指标</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">训练强度设置</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">单位设置</a></li>
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="行踪表单 " class="leftdaohang ">地址设置</a></li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </li>
+                    <!-- 医务管理 -->
+                    <li class="layui-nav-item ">
+                        <a href="javascript:; ">医务管理</a>
+                        <dl class="layui-nav-child ">
+                            <dd><a href="javascript:; " data-url="synthesize.html " mytitle="医务监督 " class="leftdaohang ">医务监督</a></dd>
+                            <dd><a href="javascript:; " data-url="track.html " mytitle="医务分析 " class="leftdaohang ">医务分析</a></dd>
+                            <dd><a href="javascript:; " data-url="jiaose.html " mytitle="体态测试 " class="leftdaohang ">体态测试</a></dd>
+                            <dd><a href="javascript:; " data-url="jiaose.html " mytitle="体积知识 " class="leftdaohang ">体积知识</a></dd>
+                            <dd>
+                                <a href="javascript:; " class="third-class ">医务设置
+                                        <span class=" layui-icon layui-icon-next "></span>
+                                    </a>
+                                <ol class="layui-nav-third-child layui-bg-blue ">
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="损伤类型设置 " class="leftdaohang ">损伤类型设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="损伤部位设置" class="leftdaohang">损伤部位设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="疾病类型设置" class="leftdaohang">疾病类型设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="伤病程度设置" class="leftdaohang">伤病程度设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="体态指标类型" class="leftdaohang">体态指标类型</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="体态指标设置" class="leftdaohang">体态指标设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="单位设置" class="leftdaohang">单位设置</a></li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <!-- 选材管理 -->
+                    <li class="layui-nav-item ">
+                        <a href="javascript:; ">选材管理</a>
+                        <dl class="layui-nav-child ">
+                            <dd><a href="javascript:; " data-url="synthesize.html " mytitle="医务监督 " class="leftdaohang ">测试管理</a></dd>
+                            <dd><a href="javascript:; " data-url="track.html " mytitle="医务分析 " class="leftdaohang ">查询管理</a></dd>
+                            <dd>
+                                <a href="javascript:; " class="third-class ">选材设置
+                                        <span class=" layui-icon layui-icon-next "></span>
+                                    </a>
+                                <ol class="layui-nav-third-child layui-bg-blue ">
+                                    <li><a href="javascript:; " data-url="jiaose.html " mytitle="损伤类型设置 " class="leftdaohang ">损伤类型设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="损伤部位设置" class="leftdaohang">损伤部位设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="疾病类型设置" class="leftdaohang">疾病类型设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="伤病程度设置" class="leftdaohang">伤病程度设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="体态指标类型" class="leftdaohang">体态指标类型</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="体态指标设置" class="leftdaohang">体态指标设置</a></li>
+                                    <li><a href="javascript:;" data-url="track.html" mytitle="单位设置" class="leftdaohang">单位设置</a></li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </li>
+
+
+
+
+
+                    <li class="layui-nav-item leftdaohang" data-url="zhanghao.html" mytitle="账号管理"><a>账号管理</a></li>
+
+                    <!-- 系统设置 -->
+                    <li class="layui-nav-item ">
+                        <a href="javascript:; ">系统设置</a>
+                        <dl class="layui-nav-child ">
+                            <dd><a href="javascript:; " data-url="" mytitle="岗位设置 " class="leftdaohang ">岗位设置</a></dd>
+                            <dd><a href="javascript:; " data-url=" " mytitle="角色设置 " class="leftdaohang ">角色设置</a></dd>
+                            <dd><a href="javascript:; " data-url="" mytitle="账号设置 " class="leftdaohang ">账号设置</a></dd>
+                            <dd><a href="javascript:; " data-url="menu.html " mytitle="菜单设置 " class="leftdaohang ">菜单设置</a></dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!--3.右侧主体内容区-->
+
+        <div class="layui-body">
+
+            <!--tabs标签-->
+
+            <div class="layui-tab layui-tab-card" lay-filter="demo" lay-allowclose="true">
+
+                <ul class="layui-tab-title">
+
+                    <!--   <li class="layui-this">角色管理</li>-->
+                </ul>
+
+                <div class="layui-tab-content" style="height: 100%;">
+                </div>
+            </div>            </div>
+
+
+
+        <!--4.底部固定区域-->
+
+        <div class="layui-footer">
+
+            <!-- 底部固定区域 -->
+            © layui.com - 底部固定区域           </div>
+    </div>
+
+    <script src="./layui/layui.all.js"></script>
+
+    <script>
+        layui.use('element', function() {          
+            var $ = layui.jquery          ,
+                element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+                                 //触发事件
+                      
+            var active = {           
+                tabAdd: function() {             //新增一个Tab项
+                                
+                    var htmlurl = $(this).attr('data-url');            
+                    var mytitle = $(this).attr('mytitle'); 
+                    //                  alert("触发tab增加事件："+mytitle);
+                                 //先判断是否已经有了tab
+                                
+                    var arrayObj = new Array();　 //创建一个数组  
+                                   
+                    $(".layui-tab-title").find('li').each(function() {              
+                        var y = $(this).attr("lay-id");               
+                        arrayObj.push(y);          
+                    });
+                    //                    alert("遍历取到的数组："+arrayObj);
+                                   
+                    var have = $.inArray(mytitle, arrayObj);  //返回 3,
+                                  
+                    if (have >= 0) {                  //tab已有标签
+                        //                        alert("遍历的已有标签："+mytitle);
+                                       
+                        element.tabChange('demo', mytitle); //切换到当前点击的页面
+                                      
+                    } else {                //没有相同tab
+                        //                      alert("遍历的没有相同tab："+mytitle);
+                                       
+                        element.tabAdd('demo', {                
+                            title: mytitle //用于演示
+                                                ,
+                            content: '<iframe id="main" style="width: 100%;" frameborder="0" scrolling="no" src=' + htmlurl + ' ></iframe>'                ,
+                            id: mytitle //实际使用一般是规定好的id，这里以时间戳模拟下
+                                               
+                        })               
+                        element.tabChange('demo', mytitle); //切换到当前点击的页面
+                                      
+                    }           
+                }                     
+            };          
+            $(".leftdaohang").click(function() {            
+                var type = "tabAdd";            
+                var othis = $(this);
+                //                var htmlurl=$(this).attr('data-url');
+                //                var mytitle=$(this).attr('mytitle');
+                            
+                active[type] ? active[type].call(this, othis) : '';         
+            });                   
+        });
+        // 左边导航的 三级设置
+        layui.use(['element', 'jquery'], function() {
+            var element = layui.element,
+                $ = layui.jquery;
+            $(".layui-nav-third-child ").hide();
+            $(".third-class ").on('click', function() {
+                $(".layui-nav-third-child ").hide();
+                $(this).next().show();
+            });
+        });
+    </script>
+</body>
+
+</html>

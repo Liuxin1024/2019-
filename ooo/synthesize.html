@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./reset.css">
+    <title>综合管理</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            /* overflow: hidden; */
+/*            height: 100vh;
+            overflow: auto;*/
+        }
+        .content {
+            padding: 20px 0px 0 50px;
+        }
+        
+        .stitle {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .manner {
+            border: 0px solid red;
+            border-color: #088ef0;
+            background: linear-gradient(#34a5f8, #088ef0);
+            color: #FFF;
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            text-align: center;
+            width: 70px;
+            height: 40px;
+            box-sizing: border-box;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+        }
+        
+        input {
+            outline-color: invert;
+            outline-style: none;
+            outline-width: 0px;
+            border: none;
+            border-style: none;
+            text-shadow: none;
+            -webkit-appearance: none;
+            -webkit-user-select: text;
+            outline-color: transparent;
+            box-shadow: none;
+            text-align: center;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: rgb(64, 158, 255);
+            padding: 10px 20px;
+            border: solid 1px #666;
+            color: #fff;
+            text-align: center;
+        }
+        
+        td {
+            padding: 10px 20px;
+            border: solid 1px #666;
+            text-align: center;
+        }
+        
+        .submit {
+            width: 70px;
+            height: 30px;
+            border: 0px solid red;
+            border-color: #088ef0;
+            background: linear-gradient(#34a5f8, #088ef0);
+            color: #FFF;
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            box-sizing: border-box;
+            margin-top: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="content">
+        <h1>用户登录</h1>
+        <p class="stitle">简要描述</p>
+        <li>用户登录接口</li>
+        <p class="stitle">请求url</p>
+        <li>
+            <code style="color:red;font-size: 20px;"> http://xx.com/api/user/login</code>
+        </li>
+        <p class="stitle">请求方式</p>
+        <button class="manner">POST</button>
+        <p class="stitle">参数</p>
+        <form id="from" method="POST" action="">
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>参数值</th>
+                    <th>必选</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="是" /></td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="number" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="提交(提交按钮)"> -->
+
+            <input type="button" value="提交" onclick="submitFrom();" class="submit">
+            <input type="reset" value="重置(重置按钮)" class="submit">
+
+            <p class="stitle">返回示例</p>
+            <textarea name="" id="" cols="100" rows="10" style="padding-bottom: 20px"></textarea>
+
+            <p class="stitle">返回参数说明</p>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="text" name="name" value="" id="name" placeholder="请输入" /></td>
+                    <td>用户名</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    function submitFrom() {
+        document.getElementById("from").submit()
+        console.log(document.getElementById('from'))
+        console.log(111)
+
+    }
+
+//    window.onload = function(){
+//        var s = parent.document.getElementById('main');
+//        s.style.height = document.body.offsetHeight +50+'px';
+//    }
+    
+    parent.$(function(){
+        var s = parent.document.getElementById('main');
+        s.style.height = document.body.offsetHeight +50+'px';
+    })
+    
+    // 内链框架的自适应高度
+    //set iframe height
+    // 计算页面的实际高度，iframe自适应会用到
+    // window.onload=function(){
+    //     function calcPageHeight(doc) {
+    //         var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight,doc.body.offsetHeight)
+    //         var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight,doc.body.offsetHeight)
+    //         var height  = Math.max(cHeight, sHeight);
+    //         return height
+    //     }
+    //     //根据ID获取iframe对象
+    //     var ifr = document.getElementById('mainFrame')
+    //     ifr.onload = function() {
+    //     //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩
+    //           ifr.style.height='0px';
+    //         var iDoc = ifr.contentDocument || ifr.document
+    //         var height = calcPageHeight(iDoc)
+    //         console.log(height)
+    //         if(height < 850){
+    //             height = 850;
+    //         }
+    //         ifr.style.height = height + 'px'
+    //     }
+
+    // }
+</script>
+
+</html>
